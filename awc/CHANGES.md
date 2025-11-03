@@ -2,7 +2,24 @@
 
 ## Unreleased
 
+## 3.8.1
+
+- Fix a bug where `GO_AWAY` errors did not stop connections from returning to the pool.
+
+## 3.8.0
+
+- Add `hickory-dns` crate feature (off-by-default).
+- The `trust-dns` crate feature now delegates DNS resolution to `hickory-dns`.
+
+## 3.7.0
+
+- Update `brotli` dependency to `8`.
+
+## 3.6.0
+
 - Prevent panics on connection pool drop when Tokio runtime is shutdown early.
+- Do not send `Host` header on HTTP/2 requests, as it is not required, and some web servers may reject it.
+- Update `brotli` dependency to `7`.
 - Minimum supported Rust version (MSRV) is now 1.75.
 
 ## 3.5.1
